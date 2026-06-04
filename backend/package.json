@@ -1,0 +1,15 @@
+{
+  "name": "fire-extinguisher-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:auth\" \"npm run dev:extinguisher\" \"npm run dev:inspection\" \"npm run dev:reporting\" \"npm run dev:gateway\"",
+    "dev:auth": "cd user-auth-service && npm run dev",
+    "dev:extinguisher": "cd extinguisher-service && npm run dev",
+    "dev:inspection": "cd inspection-service && npm run dev",
+    "dev:reporting": "cd reporting-service && npm run dev",
+    "dev:gateway": "cd api-gateway && npx ts-node src/server.ts"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
