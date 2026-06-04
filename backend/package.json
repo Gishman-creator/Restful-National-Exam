@@ -2,6 +2,8 @@
   "name": "fire-extinguisher-backend",
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "npm run install:all",
+    "install:all": "npm install --prefix api-gateway && npm install --prefix extinguisher-service && npm install --prefix inspection-service && npm install --prefix reporting-service && npm install --prefix user-auth-service",
     "dev": "concurrently \"npm run dev:auth\" \"npm run dev:extinguisher\" \"npm run dev:inspection\" \"npm run dev:reporting\" \"npm run dev:gateway\"",
     "dev:auth": "cd user-auth-service && npm run dev",
     "dev:extinguisher": "cd extinguisher-service && npm run dev",
